@@ -28,11 +28,20 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  `counter1` gives us a counter function which increments a count tied to it specifically.
+  `counter2` increments a global count.
   
   2. Which of the two uses a closure? How can you tell?
+  `counter1` uses a closure. I can tell by looking at the fact that it:
+  1. depends on a higher order function to return the counter.
+  2. closes over a variable in the scope of its constructor function.
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
-     counter2 be better?  
+     counter2 be better?
+  `counter1` is preferable when we want the counter function to have its own
+  private count to increment, perhaps in a case where we would want to have
+  multiple counters each with their own count. `counter2` might be preferable when
+  we might want multiple counters all incrementing the same count.
 */
 
 // counter1 code
